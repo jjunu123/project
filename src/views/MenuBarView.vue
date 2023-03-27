@@ -4,7 +4,7 @@
       <nav><router-link to="/">Home</router-link></nav>
       <nav><router-link to="/mainview">Main</router-link></nav>
       <nav><router-link to="/taskview">ToDoList</router-link></nav>
-      <nav><router-link to="//databinding/html">HTML</router-link></nav>
+      <nav><router-link to="/memoview">MEMO</router-link></nav>
     </div>
   </section>
 
@@ -19,10 +19,10 @@
           <div>Inventory</div>
           <div>Manager</div>
         </li>
-        <li>HOME</li>
-        <li>MANAGER</li>
-        <li>STATE</li>
-        <li>RESISTER</li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/mainview">Main</router-link></li>
+        <li><router-link to="/taskview">ToDoList</router-link></li>
+        <li><router-link to="//databinding/html">HTML</router-link></li>
         <li id="company">
           <div>Welcome to Inventory</div>
           <div>Seoul Gangnam <br> ... </div>
@@ -32,7 +32,9 @@
     </div>
     <img id="left_btn" @click="toggle" src="../assets/left_btn.png">
   </div>
-
+  <div class="rightdown">
+    <memo-view></memo-view>
+    </div>
   <div class="right_view">
     <task-view></task-view>
   </div>
@@ -41,9 +43,9 @@
 <script>
 import TaskView from './TaskView.vue'
 import CalenderView from './CalenderView.vue'
-
+import MemoView from './MemoView.vue'
 export default {
-  components: { TaskView, CalenderView },
+  components: { TaskView, CalenderView, MemoView },
   name: 'left_view',
   data() {
     return {
@@ -123,7 +125,15 @@ export default {
     color: #d8a9a9;
     cursor : pointer;
   }
-
+  .rightdown{
+    position: absolute;
+    right: 0;
+    top: 50;
+    width: 300px;
+    height: 30%;
+    background-color: #fff;
+    border-left: 1px solid #eee;
+  }
   .right_view {
     position: absolute;
     right: 0;

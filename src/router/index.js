@@ -54,6 +54,11 @@ const routes = [
     path: '/calenderview',
     name: 'CalenderView',
     component: () => import(/* webpackChunkName: "databinding" webpackPrefetch:true */ '../views/CalenderView.vue')
+  },
+  {
+    path: '/memoview',
+    name: 'MemoView',
+    component: () => import(/* webpackChunkName: "databinding" webpackPrefetch:true */ '../views/MemoView.vue')
   }
 ]
 
